@@ -1,0 +1,533 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clean Station Car – Lavagem Detalhada Premium em Braga</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:#0d0d0d;color:#fff;overflow-x:hidden;}
+
+/* ─── NAVBAR ─── */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 44px;height:62px;
+  background:rgba(8,8,8,0.98);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.nav-logo img{height:46px;object-fit:contain;display:block;}
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center;}
+.nav-links a{color:#aaa;text-decoration:none;font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:4px;border-bottom:2px solid transparent;transition:all .2s;}
+.nav-links a.active{color:#fff;border-bottom-color:#fff;}
+.nav-links a:hover{color:#fff;}
+.nav-btn{background:transparent;border:1.5px solid #fff;color:#fff;padding:9px 20px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .2s;}
+.nav-btn:hover{background:#fff;color:#000;}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;height:100vh;min-height:620px;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 60px 0;overflow:hidden;
+  background:#090909;
+}
+.hero-car-bg{
+  position:absolute;right:0;top:0;bottom:0;width:70%;
+  background:url('../img/banner.png') center/cover no-repeat;
+  opacity:.75;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.05) 20%,rgba(0,0,0,0.7) 45%,#000 70%);
+  mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.05) 20%,rgba(0,0,0,0.7) 45%,#000 70%);
+}
+.hero-car-bg::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(255,255,255,0.06) 0%,transparent 70%);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,#090909 30%,rgba(9,9,9,.85) 50%,rgba(9,9,9,.3) 75%,rgba(9,9,9,.05) 100%);
+}
+.hero-fog{
+  position:absolute;bottom:60px;left:0;right:0;height:200px;
+  background:radial-gradient(ellipse 100% 100% at 55% 100%,rgba(180,180,180,0.05) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:2;max-width:500px;}
+.hero-title{
+  font-size:98px;line-height:.86;font-weight:900;
+  text-transform:uppercase;letter-spacing:-2px;color:#fff;
+  text-shadow:2px 2px 40px rgba(0,0,0,.9);
+}
+.hero-car-line{
+  font-size:44px;font-weight:300;letter-spacing:16px;color:#ccc;
+  display:flex;align-items:center;gap:0;margin-top:4px;
+  text-shadow:none;
+}
+.hero-car-line::before,.hero-car-line::after{content:'';flex:1;height:1px;background:#444;}
+.hero-car-line::before{margin-right:14px;}
+.hero-car-line::after{margin-left:14px;}
+.hero-subtitle{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#bbb;margin:22px 0 8px;}
+.hero-tag{font-size:14px;color:#777;font-weight:400;margin-bottom:34px;}
+.hero-btns{display:flex;gap:14px;}
+.btn-w{display:inline-flex;align-items:center;gap:9px;border:1.5px solid #fff;background:transparent;color:#fff;padding:13px 24px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;font-family:'Montserrat',sans-serif;transition:all .2s;}
+.btn-w:hover{background:#fff;color:#000;}
+.btn-g{display:inline-flex;align-items:center;gap:9px;border:1.5px solid #444;background:transparent;color:#bbb;padding:13px 24px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;font-family:'Montserrat',sans-serif;transition:all .2s;}
+.btn-g:hover{border-color:#fff;color:#fff;}
+.hero-bar{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  display:flex;
+  border-top:1px solid rgba(255,255,255,0.09);
+  background:rgba(6,6,6,.75);
+  backdrop-filter:blur(4px);
+}
+.hb{display:flex;align-items:center;gap:9px;flex:1;padding:16px 24px;border-right:1px solid rgba(255,255,255,0.08);}
+.hb:first-child{padding-left:60px;}
+.hb:last-child{border-right:none;}
+.hb svg{color:#999;flex-shrink:0;}
+.hb span{font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#aaa;}
+
+/* ─── SERVICES ─── */
+.sec-services{padding:76px 60px;background:#111;}
+.sec-h{font-size:20px;font-weight:900;letter-spacing:4px;text-transform:uppercase;text-align:center;margin-bottom:7px;}
+.sec-s{font-size:11px;color:#666;text-align:center;letter-spacing:1px;margin-bottom:46px;}
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1a1a1a;}
+.srv-card{background:#0e0e0e;display:flex;flex-direction:column;}
+.srv-img{width:100%;height:188px;object-fit:cover;display:block;filter:grayscale(25%) brightness(.82);}
+.srv-body{padding:20px 16px 22px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;}
+.srv-ico{margin-bottom:10px;color:#ccc;}
+.srv-n{font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;line-height:1.3;}
+.srv-d{font-size:11px;color:#666;line-height:1.65;margin-bottom:14px;flex:1;}
+.srv-p{font-size:13px;font-weight:800;color:#fff;}
+.srv-p em{font-size:10px;font-weight:400;color:#666;font-style:normal;}
+.tc{text-align:center;margin-top:34px;}
+.btn-o{display:inline-block;border:1px solid #444;color:#bbb;padding:12px 34px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Montserrat',sans-serif;}
+.btn-o:hover{border-color:#fff;color:#fff;}
+
+/* ─── BANNER ─── */
+.banner{
+  position:relative;min-height:400px;display:flex;align-items:center;
+  padding:80px 60px;background:#0a0a0a;overflow:hidden;
+}
+.banner-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=1400&q=80') center 65%/cover no-repeat;
+  opacity:.2;filter:grayscale(40%);
+}
+.banner-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,#0a0a0a 32%,rgba(10,10,10,.75) 55%,rgba(10,10,10,.15) 100%);
+}
+.banner-txt{position:relative;z-index:2;max-width:420px;}
+.banner-txt h2{font-size:42px;font-weight:900;text-transform:uppercase;line-height:1.0;margin-bottom:18px;letter-spacing:-1px;}
+.banner-txt h2 em{font-style:normal;color:#999;font-weight:300;}
+.banner-txt p{font-size:12.5px;color:#777;line-height:1.8;margin-bottom:26px;}
+
+/* ─── ANTES & DEPOIS ─── */
+.sec-ad{padding:76px 60px;background:#111;}
+.ad-nav{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;}
+.ad-arr{width:34px;height:34px;border:1px solid #2e2e2e;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#777;flex-shrink:0;transition:all .2s;margin-top:70px;}
+.ad-arr:hover{border-color:#fff;color:#fff;}
+.ad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;flex:1;}
+.ad-card{}
+.ad-pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.ad-img{width:100%;height:144px;object-fit:cover;display:block;}
+.ad-labels{display:flex;}
+.ad-lbl{flex:1;text-align:center;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#555;padding:5px 0;background:#0d0d0d;}
+.ad-cat{text-align:center;font-size:9.5px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#bbb;margin-top:8px;}
+
+/* ─── PROCESS ─── */
+.sec-process{padding:76px 60px;background:#181818;}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
+.proc{text-align:center;padding:0 8px;}
+.proc-n{font-size:10.5px;font-weight:700;letter-spacing:3px;color:#444;margin-bottom:14px;}
+.proc-ico{width:66px;height:66px;border:1px solid rgba(255,255,255,.11);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.proc-name{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.proc-desc{font-size:11px;color:#5a5a5a;line-height:1.72;}
+
+/* ─── TESTIMONIALS ─── */
+.sec-test{padding:76px 60px;background:#111;}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.tc2{border:1px solid #1e1e1e;padding:26px 22px;}
+.tstars{color:#f5c518;font-size:14px;letter-spacing:3px;margin-bottom:14px;}
+.ttxt{font-size:11.5px;color:#aaa;line-height:1.8;margin-bottom:18px;font-style:italic;}
+.tname{font-size:12px;font-weight:700;}
+.tcar{font-size:11px;color:#555;margin-top:2px;}
+.tdots{display:flex;justify-content:center;gap:8px;margin-top:26px;}
+.td{width:8px;height:8px;border-radius:50%;background:#2a2a2a;cursor:pointer;}
+.td.on{background:#fff;}
+
+/* ─── LOCATION ─── */
+.sec-loc{display:grid;grid-template-columns:1fr 1fr;background:#0d0d0d;}
+.loc-l{display:grid;grid-template-columns:1fr 1fr;}
+.loc-info{padding:52px 40px;border-right:1px solid #181818;}
+.loc-t{font-size:14px;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:26px;}
+.li{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;}
+.li svg{color:#999;flex-shrink:0;margin-top:1px;}
+.li p{font-size:12px;color:#bbb;line-height:1.6;}
+.map-wrap{overflow:hidden;min-height:260px;position:relative;}
+.map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(100%) brightness(.45) contrast(1.2);}
+.cta-b{padding:52px 40px;background:#161616;display:flex;flex-direction:column;justify-content:center;}
+.cta-t{font-size:20px;font-weight:900;text-transform:uppercase;line-height:1.15;margin-bottom:12px;}
+.cta-s{font-size:12px;color:#666;line-height:1.75;margin-bottom:26px;}
+
+/* ─── FOOTER ─── */
+footer{background:#0f0f0f;border-top:1px solid #1a1a1a;padding:50px 60px 22px;}
+.fg{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;margin-bottom:42px;}
+.fb img{height:40px;margin-bottom:14px;display:block;}
+.fb p{font-size:11px;color:#444;line-height:1.75;}
+.fc h4{font-size:9.5px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:16px;}
+.fc a{display:block;font-size:11.5px;color:#444;text-decoration:none;margin-bottom:8px;transition:color .2s;}
+.fc a:hover{color:#bbb;}
+.socrow{display:flex;gap:10px;margin-top:4px;}
+.socico{width:35px;height:35px;border:1px solid #222;display:flex;align-items:center;justify-content:center;color:#444;text-decoration:none;transition:all .2s;}
+.socico:hover{border-color:#fff;color:#fff;}
+.fbot{border-top:1px solid #191919;padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.fbot p,.fbot a{font-size:10px;color:#333;}
+.fbot a{text-decoration:none;margin-left:18px;}
+.fbot a:hover{color:#666;}
+
+/* WhatsApp */
+.wafab{position:fixed;bottom:26px;right:26px;z-index:9999;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.45);text-decoration:none;transition:transform .2s;}
+.wafab:hover{transform:scale(1.08);}
+svg{display:inline-block;vertical-align:middle;}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">
+    <img src="../img/logo.png" alt="Clean Station Car">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero" class="active">INÍCIO</a></li>
+    <li><a href="#services">SERVIÇOS</a></li>
+    <li><a href="#antesdepois">ANTES &amp; DEPOIS</a></li>
+    <li><a href="#sobre">SOBRE NÓS</a></li>
+    <li><a href="#test">TESTEMUNHOS</a></li>
+    <li><a href="#location">CONTACTOS</a></li>
+  </ul>
+  <button class="nav-btn">MARCAR AGORA</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-car-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-fog"></div>
+  <div class="hero-content">
+    <div class="hero-title">
+      <span style="display:block">CLEAN</span>
+      <span style="display:block">STATION</span>
+      <div class="hero-car-line">CAR</div>
+    </div>
+    <p class="hero-subtitle">Lavagem Detalhada Premium em Braga</p>
+    <p class="hero-tag">O detalhe que o teu carro merece.</p>
+    <div class="hero-btns">
+      <a href="#location" class="btn-w">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        MARCAR AGORA
+      </a>
+      <a href="#services" class="btn-g">VER SERVIÇOS</a>
+    </div>
+  </div>
+  <div class="hero-bar">
+    <div class="hb">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>Atendimento Premium</span>
+    </div>
+    <div class="hb">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4-4.5"/></svg>
+      <span>Produtos de Qualidade</span>
+    </div>
+    <div class="hb">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>Resultados Garantidos</span>
+    </div>
+    <div class="hb">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span>Marcação Rápida</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec-services" id="services">
+  <h2 class="sec-h">OS NOSSOS SERVIÇOS</h2>
+  <p class="sec-s">Soluções completas para cuidar do teu carro ao mais alto nível.</p>
+  <div class="srv-grid">
+    <div class="srv-card">
+      <img class="srv-img" src="../img/lavagem.jpg" alt="Lavagem Detalhada">
+      <div class="srv-body">
+        <div class="srv-ico">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-4 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <div class="srv-n">LAVAGEM DETALHADA</div>
+        <div class="srv-d">Lavagem exterior profunda com atenção a cada detalhe.</div>
+        <div class="srv-p"><em>DESDE </em>25€</div>
+      </div>
+    </div>
+    <div class="srv-card">
+      <img class="srv-img" src="../img/interior.jpg" alt="Higienização Interior">
+      <div class="srv-body">
+        <div class="srv-ico">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <div class="srv-n">HIGIENIZAÇÃO INTERIOR</div>
+        <div class="srv-d">Limpeza e higienização completa do habitáculo.</div>
+        <div class="srv-p"><em>DESDE </em>40€</div>
+      </div>
+    </div>
+    <div class="srv-card">
+      <img class="srv-img" src="../img/polimento.jpg" alt="Polimento">
+      <div class="srv-body">
+        <div class="srv-ico">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <div class="srv-n">POLIMENTO</div>
+        <div class="srv-d">Correção de pintura e remoção de riscos e imperfeições.</div>
+        <div class="srv-p"><em>DESDE </em>80€</div>
+      </div>
+    </div>
+    <div class="srv-card">
+      <img class="srv-img" src="../img/proteção.jpg" alt="Proteção Cerâmica" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80'">
+      <div class="srv-body">
+        <div class="srv-ico">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="srv-n">PROTEÇÃO CERÂMICA</div>
+        <div class="srv-d">Proteção duradoura com brilho intenso e efeito hidrofóbico.</div>
+        <div class="srv-p"><em>DESDE </em>120€</div>
+      </div>
+    </div>
+  </div>
+  <div class="tc"><a href="#" class="btn-o">VER TODOS OS SERVIÇOS</a></div>
+</section>
+
+<!-- BANNER -->
+<section class="banner" id="sobre">
+  <div class="banner-bg"></div>
+  <div class="banner-grad"></div>
+  <div class="banner-txt">
+    <h2>O DETALHE QUE<br><em>O TEU CARRO</em><br>MERECE</h2>
+    <p>Na Clean Station Car, cada veículo recebe o cuidado e a atenção que merece. Qualidade, paixão e perfeição em cada detalhe.</p>
+    <a href="#location" class="btn-w">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      MARCAR AGORA
+    </a>
+  </div>
+</section>
+
+<!-- ANTES & DEPOIS -->
+<section class="sec-ad" id="antesdepois">
+  <h2 class="sec-h">ANTES &amp; DEPOIS</h2>
+  <p class="sec-s" style="margin-bottom:36px;">Resultados que falam por si.</p>
+  <div class="ad-nav">
+    <div class="ad-arr">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </div>
+    <div class="ad-grid">
+      <div class="ad-card">
+        <div class="ad-pair">
+          <img class="ad-img" src="../img/antes_ex.png" alt="Antes" style="filter:grayscale(90%) brightness(.55) sepia(10%);">
+          <img class="ad-img" src="../img/depois_ex.png" alt="Depois" style="filter:grayscale(15%) brightness(.88);">
+        </div>
+        <div class="ad-labels"><span class="ad-lbl">ANTES</span><span class="ad-lbl">DEPOIS</span></div>
+        <div class="ad-cat">EXTERIOR</div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-pair">
+          <img class="ad-img" src="../img/antes_in.png" alt="Antes" style="filter:grayscale(90%) brightness(.5) sepia(15%);">
+          <img class="ad-img" src="../img/depois_in.png" alt="Depois" style="filter:grayscale(10%) brightness(.88);">
+        </div>
+        <div class="ad-labels"><span class="ad-lbl">ANTES</span><span class="ad-lbl">DEPOIS</span></div>
+        <div class="ad-cat">INTERIOR</div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-pair">
+          <img class="ad-img" src="../img/antes_ba.png" alt="Antes" style="filter:grayscale(90%) brightness(.5) sepia(20%);">
+          <img class="ad-img" src="../img/depois_ba.png" alt="Depois" style="filter:grayscale(10%) brightness(.88);">
+        </div>
+        <div class="ad-labels"><span class="ad-lbl">ANTES</span><span class="ad-lbl">DEPOIS</span></div>
+        <div class="ad-cat">BANCOS</div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-pair">
+          <img class="ad-img" src="../img/antes_ja.png" alt="Antes" style="filter:grayscale(90%) brightness(.5) sepia(10%);">
+          <img class="ad-img" src="../img/depois_ja.png" alt="Depois" style="filter:grayscale(10%) brightness(.88);">
+        </div>
+        <div class="ad-labels"><span class="ad-lbl">ANTES</span><span class="ad-lbl">DEPOIS</span></div>
+        <div class="ad-cat">JANTES</div>
+      </div>
+    </div>
+    <div class="ad-arr">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+  </div>
+  <div class="tc" style="margin-top:32px;"><a href="#" class="btn-o">VER MAIS RESULTADOS</a></div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec-process">
+  <h2 class="sec-h">O NOSSO PROCESSO</h2>
+  <p class="sec-s">Cada detalhe importa.</p>
+  <div class="proc-grid">
+    <div class="proc">
+      <div class="proc-n">01</div>
+      <div class="proc-ico">
+        <svg width="28" height="28" fill="none" stroke="#bbb" stroke-width="1.4" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
+      <div class="proc-name">AVALIAÇÃO</div>
+      <div class="proc-desc">Analisamos o estado do veículo para definir o melhor tratamento.</div>
+    </div>
+    <div class="proc">
+      <div class="proc-n">02</div>
+      <div class="proc-ico">
+        <svg width="28" height="28" fill="none" stroke="#bbb" stroke-width="1.4" viewBox="0 0 24 24"><path d="M3 6l3 13h12l3-13H3z"/><path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="12" y1="11" x2="12" y2="15"/><line x1="10" y1="13" x2="14" y2="13"/></svg>
+      </div>
+      <div class="proc-name">LAVAGEM PROFUNDA</div>
+      <div class="proc-desc">Removemos sujidade, contaminantes e impurezas em profundidade.</div>
+    </div>
+    <div class="proc">
+      <div class="proc-n">03</div>
+      <div class="proc-ico">
+        <svg width="28" height="28" fill="none" stroke="#bbb" stroke-width="1.4" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="proc-name">DETALHE &amp; PROTEÇÃO</div>
+      <div class="proc-desc">Trabalhamos cada detalhe e aplicamos proteção de alta qualidade.</div>
+    </div>
+    <div class="proc">
+      <div class="proc-n">04</div>
+      <div class="proc-ico">
+        <svg width="28" height="28" fill="none" stroke="#bbb" stroke-width="1.4" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="proc-name">ENTREGA PREMIUM</div>
+      <div class="proc-desc">Entregamos o teu carro impecável e pronto para impressionar.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec-test" id="test">
+  <h2 class="sec-h">O QUE DIZEM OS NOSSOS CLIENTES</h2>
+  <p class="sec-s" style="margin-bottom:38px;"></p>
+  <div class="tgrid">
+    <div class="tc2">
+      <div class="tstars">★★★★★</div>
+      <p class="ttxt">"Serviço excepcional! O carro ficou como novo, superou as minhas expectativas."</p>
+      <div class="tname">Ricardo Pereira</div>
+      <div class="tcar">BMW Série 3</div>
+    </div>
+    <div class="tc2">
+      <div class="tstars">★★★★★</div>
+      <p class="ttxt">"Profissionalismo, atenção ao detalhe e resultados incríveis. Recomendo a 100%!"</p>
+      <div class="tname">João Fernandes</div>
+      <div class="tcar">Audi A4</div>
+    </div>
+    <div class="tc2">
+      <div class="tstars">★★★★★</div>
+      <p class="ttxt">"Melhor lavagem detalhada que já fiz. Ambiente impecável e pessoal muito atencioso."</p>
+      <div class="tname">Miguel Costa</div>
+      <div class="tcar">Mercedes C220</div>
+    </div>
+  </div>
+  <div class="tdots">
+    <div class="td on"></div>
+    <div class="td"></div>
+    <div class="td"></div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<div class="sec-loc" id="location">
+  <div class="loc-l">
+    <div class="loc-info">
+      <div class="loc-t">ONDE ESTAMOS</div>
+      <div class="li">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <p>Braga, Portugal</p>
+      </div>
+      <div class="li">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        <p>+351 000 000 000</p>
+      </div>
+      <div class="li">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <p>geral@cleanstationcar.pt</p>
+      </div>
+      <div class="li">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <p>Segunda a Sábado<br>08:00 – 19:00</p>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47868.01906019265!2d-8.453540049999999!3d41.5510132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24fe5b5e0b0001%3A0x3604e73e33ab74ee!2sBraga!5e0!3m2!1spt!2spt!4v1700000000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+  <div class="cta-b">
+    <div class="cta-t">MARCA JÁ<br>O TEU HORÁRIO!</div>
+    <p class="cta-s">Faz a tua marcação rápida e garante o melhor cuidado para o teu carro.</p>
+    <a href="#" class="btn-w">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      MARCAR AGORA
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="../img/logo.png" alt="Clean Station Car">
+      <p>Lavagem detalhada premium em Braga.<br>O detalhe que o teu carro merece.</p>
+    </div>
+    <div class="fc">
+      <h4>Navegação</h4>
+      <a href="#hero">Início</a>
+      <a href="#services">Serviços</a>
+      <a href="#antesdepois">Antes &amp; Depois</a>
+    </div>
+    <div class="fc">
+      <h4>&nbsp;</h4>
+      <a href="#sobre">Sobre Nós</a>
+      <a href="#test">Testemunhos</a>
+      <a href="#location">Contactos</a>
+    </div>
+    <div class="fc">
+      <h4>Redes Sociais</h4>
+      <div class="socrow">
+        <a href="#" class="socico">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="socico">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="socico">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="#" class="socico">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.77 1.52V6.75a4.85 4.85 0 01-1-.06z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2024 Clean Station Car. Todos os direitos reservados.</p>
+    <div>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos &amp; Condições</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/351000000000" class="wafab" aria-label="WhatsApp">
+  <svg width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
